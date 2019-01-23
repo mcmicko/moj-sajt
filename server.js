@@ -21,8 +21,7 @@ mongoose.connect(db, { useNewUrlParser: true, useMongoClient: true, })
 app.use(passport.initialize());
 //passport config
 require('./config/passport')(passport);
-
-app.use('/', require('./routes/index'));
+//use routes
 app.use('/users', require('./routes/users'));
 
 //server static assets if in production
