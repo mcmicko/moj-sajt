@@ -21,6 +21,7 @@ mongoose.connect(db, { useNewUrlParser: true, useMongoClient: true, })
 app.use(passport.initialize());
 //passport config
 require('./config/passport')(passport);
+
 //use routes
 app.use('/users', require('./routes/users'));
 
@@ -34,6 +35,6 @@ if(process.env.NODE_ENV === 'production'){
 }
 
 
-const port = process.env.PORT || 5001;
+const port = process.env.PORT || 5000;
 
 app.listen(port , () => console.log(`server radi na portu ${port}`));
