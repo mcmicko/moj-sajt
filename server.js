@@ -35,6 +35,6 @@ if(process.env.NODE_ENV === 'production'){
 }
 
 
-const PORT = process.env.PORT || 5000;
+const port = process.env.PORT || 5000;
 
-app.listen(PORT , console.log(`server radi na portu ${PORT}`));
+app.listen(port , console.log(`server radi na portu ${port}`));
