@@ -37,4 +37,4 @@ if(process.env.NODE_ENV === 'production'){
 
 const port = process.env.PORT || 5001;
 
-app.listen(port , console.log(`server radi na portu ${port}`));
+app.listen(port , () => console.log(`server radi na portu ${port}`));
