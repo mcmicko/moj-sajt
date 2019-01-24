@@ -10,7 +10,7 @@ import {logoutUser} from './actions/authActions';
 
 import PrivateRoute from './components/common/PrivateRoute';
 
-import Navbar from './components/layout/Navbarr';
+import Navbar from './components/layout/navbar/Nav';
 import Section from './components/layout/SectionOne';
 import FooterBar from './components/layout/FooterBar';
 import Index from './components/layout/Index';
@@ -45,7 +45,7 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
-            <Navbar/>
+            
               
               <Route exact path="/" component={Index}/>
               <Route exact path="/section" component={Section}/>

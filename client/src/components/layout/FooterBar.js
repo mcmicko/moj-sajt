@@ -1,24 +1,18 @@
 import React from 'react';
-import {Footer} from 'react-materialize';
+import styled from 'styled-components';
 
 export default function FooterBar() {
   return (
-    <Footer id="footer" copyrights="&copy 2015 Copyright Text"
-      moreLinks={
-        <a className="grey-text text-lighten-4 right" href="#!">More Links</a>
-      }
-      links={
-        <ul>
-          <li><a className="grey-text text-lighten-3" href="#!">Link 1</a></li>
-          <li><a className="grey-text text-lighten-3" href="#!">Link 2</a></li>
-          <li><a className="grey-text text-lighten-3" href="#!">Link 3</a></li>
-          <li><a className="grey-text text-lighten-3" href="#!">Link 4</a></li>
-        </ul>
-      }
-      className='example #4527a0 deep-purple darken-3'
-    >
-        <h5 className="white-text">Footer Content</h5>
-        <p className="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-    </Footer>
+    <FooterWrap id="footer">
+      <p>copyright &copy; 2019 milos mcmandic</p>
+    </FooterWrap>
   )
 }
+
+const FooterWrap = styled.footer`
+  height:50px;
+  width:100%;
+  background: rgb(32, 32, 32);;
+  text-align: center
+  
+`

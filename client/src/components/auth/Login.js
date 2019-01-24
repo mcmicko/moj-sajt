@@ -3,6 +3,9 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux';
 import {loginUser} from '../../actions/authActions';
 import classnames from 'classnames';
+import Navbar from '../layout/navbar/Nav';
+import './log.css';
+
 
 class Login extends Component {
   state = {
@@ -40,24 +43,42 @@ class Login extends Component {
   render() {
     const {errors} = this.state
     return (
-      <div className="container">
-        <h1>Login</h1>
-        <div className="col s12">
-          <form onSubmit={this.onSubmit}>
-            <div className="input-field col s6">
-              <input onChange={this.onChange} placeholder="email" name="email" value={this.state.name} type="email" class={classnames('', {'invalid' : errors.email})}/>
-              {errors.email && (<small className="red-text">{errors.email}</small>)}
-            </div>
+      <React.Fragment>
+        <Navbar style={{position:'fixed'}}/>
+            <div id="wrapper">
+              <div id="left">
+                <div id="signin">
 
-            <div className="input-field col s6">
-              <input onChange={this.onChange} placeholder="password" name="password" value={this.state.password} type="password" class={classnames('', {'invalid' : errors.password})}/>
-              {errors.password && (<small className="red-text">{errors.password}</small>)}
-            </div>
-            <input className="btn #4527a0 deep-purple darken-3" type="submit" value="submit"/>            
-          </form>
+                  <h1 style={{color:'red'}}>Login</h1>
+                  <form onSubmit={this.onSubmit}>
+                    <div className="input-form">
+                    <small>{errors.email && (<small style={{color:'red'}}>{errors.email}</small>)}</small>
+                      <input id="text-input" onChange={this.onChange} placeholder="email" name="email" value={this.state.name} type="email" class={classnames('', {'invalid' : errors.email})}/>
+                    </div>
 
-        </div>
-      </div>
+                    <div>
+                    <small>{errors.password && (<small style={{color:'red'}}>{errors.password}</small>)}</small>
+                      <input id="text-input" onChange={this.onChange} placeholder="password" name="password" value={this.state.password} type="password" class={classnames('', {'invalid' : errors.password})}/>
+                      
+                    </div>
+                    <input className="primary-btn" type="submit" value="submit"/>            
+                  </form>
+                </div>
+
+              </div>
+              <div id="right">
+                <div id="showcase">
+                  <div class="showcase-content">
+                     <h1 class="showcase-text">
+                      Let's create the ffuture <strong>together</strong>
+                     </h1>
+                    <a href="#" class="secondary-btn">Start a FREE 10-day trial</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+      </React.Fragment>
+
     )
   }
 }
@@ -66,6 +87,7 @@ Login.propTypes = {
   auth: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
 }
+
 
 const mapStateToProps = state => ({
   auth: state.auth,

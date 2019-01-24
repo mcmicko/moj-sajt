@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
-import Sliderr from './Sliderr';
+import Showcase from './Showcase';
+import SectionOne from './SectionOne';
 
 class Index extends Component {
   render() {
     return (
       <div>
-        <Sliderr/>
+        <Showcase/>
+        <SectionOne/>
       </div>
     )
   }
