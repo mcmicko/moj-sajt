@@ -5,6 +5,9 @@ import {loginUser} from '../../actions/authActions';
 import classnames from 'classnames';
 import Navbar from '../layout/navbar/Nav';
 import './log.css';
+import styled from 'styled-components';
+import showcase from '../layout/img/action-astronomy-constellation-1274260.jpg';
+
 
 
 class Login extends Component {
@@ -53,13 +56,19 @@ class Login extends Component {
                   <form onSubmit={this.onSubmit}>
                     <div className="input-form">
                     <small>{errors.email && (<small style={{color:'red'}}>{errors.email}</small>)}</small>
-                      <input id="text-input" onChange={this.onChange} placeholder="email" name="email" value={this.state.name} type="email" class={classnames('', {'invalid' : errors.email})}/>
+                      <input id="text-input" 
+                      onChange={this.onChange} placeholder="email" 
+                      name="email" 
+                      value={this.state.email} type="email"/>
                     </div>
 
                     <div>
                     <small>{errors.password && (<small style={{color:'red'}}>{errors.password}</small>)}</small>
-                      <input id="text-input" onChange={this.onChange} placeholder="password" name="password" value={this.state.password} type="password" class={classnames('', {'invalid' : errors.password})}/>
-                      
+                      <input id="text-input" 
+                      onChange={this.onChange} 
+                      placeholder="password" name="password" 
+                      value={this.state.password} 
+                      type="password" />
                     </div>
                     <input className="primary-btn" type="submit" value="submit"/>            
                   </form>
@@ -67,14 +76,9 @@ class Login extends Component {
 
               </div>
               <div id="right">
-                <div id="showcase">
-                  <div class="showcase-content">
-                     <h1 class="showcase-text">
-                      Let's create the ffuture <strong>together</strong>
-                     </h1>
-                    <a href="#" class="secondary-btn">Start a FREE 10-day trial</a>
-                  </div>
-                </div>
+              <ShowImg id="showcase" img={showcase}>
+            
+              </ShowImg>   
               </div>
             </div>
       </React.Fragment>
@@ -82,6 +86,11 @@ class Login extends Component {
     )
   }
 }
+
+const ShowImg = styled.div`
+  background: url(${props => props.img}) no-repeat center center / cover;
+`
+
 Login.propTypes = {
   loginUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,

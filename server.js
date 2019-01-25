@@ -24,6 +24,7 @@ require('./config/passport')(passport);
 
 //use routes
 app.use('/users', require('./routes/users'));
+app.use('/profile', require('./routes/profile'));
 
 //server static assets if in production
 if(process.env.NODE_ENV === 'production'){

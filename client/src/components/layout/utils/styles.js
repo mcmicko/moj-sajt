@@ -1,11 +1,11 @@
 export const colors = {
-  mainWhite: `rgb(96, 96, 114)`,
+  mainWhite: `#000`,
   mainBlack: `#262626`,
   mainYellow: `rgb(216, 10, 10)`,
   mainYellow2: `#F2AF29`,
   mainGrey: `#000`,
 }
-export const textSlanted = `font-family:'Caveat', cursive;`
+// export const textSlanted = `font-family:'Caveat', cursive;`
 
 export const transDefault = 'transition:all 0.5s ease-in-out'
 export const transFunction = (

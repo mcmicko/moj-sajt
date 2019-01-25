@@ -5,11 +5,13 @@ import {styles} from '../utils';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {logoutUser} from '../../../actions/authActions';
+import {clearCurrentProfile} from '../../../actions/profileActions';
 
 
 class NavLinks extends Component {
   onLogoutClick = e => {
     e.preventDefault();
+    this.props.clearCurrentProfile();
     this.props.logoutUser();
   }
 
@@ -36,7 +38,6 @@ class NavLinks extends Component {
             <li ><NavLink className="nav-link" to="/registration">Registration</NavLink></li>
             <li ><NavLink className="nav-link" to="/login">Login</NavLink></li>            
           </React.Fragment>
-
         )}
       </LinkWrapper>
     )
@@ -48,11 +49,12 @@ li{
   list-style-type: none;
 }
 .nav-link{
+  font-size: 20px;
   display: block;
   text-decoration: none;
   padding: 0.5rem 1rem 0.5rem 1rem;
   color: ${styles.colors.mainWhite};
-  font-weight: 700;
+  font-weight: 500;
   text-transform: capitalize;
   cursor: pointer;
   ${styles.transDefault};
@@ -62,13 +64,16 @@ li{
     padding: 0.5rem 1rem 0.5rem 1.3rem;
   }
 }
-height: ${props => (props.open ? '152px' : '0px')};
+height: ${props => (props.open ? '150px' : '0px')};
 overflow: hidden;
+
+
 ${styles.transObject({time:'0.2s'})};
 @media(min-width:768px){
   height: auto;
   display: flex;
   margin: 0 auto;
+
   .nav-link:hover{
     background:none;
     padding: 0.5rem 1rem 0.5rem 1rem;
@@ -85,4 +90,4 @@ const mapStateToProps = state => ({
   auth: state.auth
 })
 
-export default connect(mapStateToProps, {logoutUser})(NavLinks);
+export default connect(mapStateToProps, {logoutUser, clearCurrentProfile})(NavLinks);

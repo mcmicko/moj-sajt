@@ -5,11 +5,11 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  /* font-family: 'Roboto', sans-serif; */
   font-weight: 300;
   background: #181818;
   color: #fff;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 h1,
@@ -122,7 +122,7 @@ h6 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url('../../components/layout/img/action-astronomy-constellation-1274260.jpg') no-repeat center center / cover;
+  /* background: url('../../components/layout/img/action-astronomy-constellation-1274260.jpg') no-repeat center center / cover; */
   height: 100%;
   text-align: center;
 }
@@ -175,9 +175,9 @@ h6 {
 }
 
 .secondary-btn {
-  padding: 0.7rem 1rem;
+  padding: 0.4rem 1rem;
   height: 2.7rem;
-  display: block;
+  /* display: block; */
   border: 1px solid #f4f4f4;
   border-radius: 2px;
   font-weight: 500;
@@ -190,8 +190,8 @@ h6 {
 }
 
 .secondary-btn:hover {
-  border-color: #ff7b39;
-  color: #ff7b39;
+  border-color: rgba(0,78,204);
+  color: rgba(0,78,204);
 }
 
 /* Media Queries */

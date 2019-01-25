@@ -34,7 +34,9 @@ const NavStyle = styled.nav`
   @media (min-width:768px){
     display: flex;
     align-items: center;
+    // justify-content: center;
   }
+
 `
 
 export default Nav;

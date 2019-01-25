@@ -7,6 +7,7 @@ import jwt_decode from 'jwt-decode';
 import setAuthToken from './utils/setAuthToken';
 import {setCurrentUser} from './actions/authActions';
 import {logoutUser} from './actions/authActions';
+import {clearCurrentProfile} from './actions/profileActions';
 
 import PrivateRoute from './components/common/PrivateRoute';
 
@@ -16,7 +17,9 @@ import FooterBar from './components/layout/FooterBar';
 import Index from './components/layout/Index';
 import Regist from './components/auth/Regist';
 import Login from './components/auth/Login';
-import Dashboard from './components/layout/Dashboard';
+import Dashboard from './components/layout/dashboard/Dashboard';
+import CreateProfile from './components/layout/dashboard/create-profile/CreateProfile';
+import EditProfile from './components/layout/dashboard/create-profile/EditProfile';
 
 
 //check for token
@@ -33,7 +36,7 @@ if(localStorage.jwtToken){
     //logout user
     store.dispatch(logoutUser());
     //todo clear current profile
-
+    store.dispatch(clearCurrentProfile());
     //redirect to login
     window.location.href = '/login';
   }
@@ -55,6 +58,12 @@ class App extends Component {
               
               <Switch>
                <PrivateRoute exact path="/dashboard" component={Dashboard}/>                
+              </Switch>
+              <Switch>
+               <PrivateRoute exact path="/create-profile" component={CreateProfile}/>                
+              </Switch>
+              <Switch>
+               <PrivateRoute exact path="/edit-profile" component={EditProfile}/>                
               </Switch>
 
 

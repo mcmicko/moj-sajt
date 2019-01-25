@@ -31,6 +31,16 @@ const ShowcaseImg = styled.header`
     padding: 0 3rem;
     margin-top: 25vh;
   }
+
+  @media(max-width:500px){
+    height: 50vh;
+
+    .header{
+      position: absolute;
+      margin-top: 10vh;
+      
+    }
+  }
 `
 
 export default Showcase;

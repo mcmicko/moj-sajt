@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+@import url('https://fonts.googleapis.com/css?family=Muli');
 
 html {
   height: 100%;
@@ -16,7 +16,7 @@ body {
   margin: 0;
   padding-bottom: 1rem;
   min-height: 100%;
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Muli', sans-serif;
 
   background-color: #252529;
   color: #fff;
