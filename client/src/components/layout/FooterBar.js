@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export default function FooterBar() {
   return (
     <FooterWrap id="footer">
-      <p>copyright &copy; 2019 milos mcmandic</p>
+      <p>copyright &copy; 2019 Milos McMandic</p>
     </FooterWrap>
   )
 }
